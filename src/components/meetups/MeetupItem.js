@@ -4,9 +4,10 @@ function MeetupItem(props) {
   return (
     <li className={classes.item}>
       <div className={classes.image}>
-        <img src={props.image} alt={props.title}>
-          {' '}
-        </img>
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg"
+          alt={props.title}
+        />
       </div>
       <div className={classes.content}>
         <h3>{props.title}</h3>
