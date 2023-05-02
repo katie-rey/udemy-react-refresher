@@ -1,5 +1,11 @@
+import NewMeetupForm from '../components/meetups/NewMeetupForm'
+
 function NewMeetUp() {
-  return <div className="new">New Meet Up</div>
+  return (
+    <div className="new">
+      <NewMeetupForm />
+    </div>
+  )
 }
 
 export default NewMeetUp
