@@ -6,14 +6,18 @@ function NewMeetupPage() {
   const history = useHistory()
 
   function addMeetupHandler(meetupData) {
-    fetch('https://react-getting-started-48dec-default-rtdb.firebaseio.com/meetups.json', {
-      method: 'POST',
-      body: JSON.stringify(meetupData),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    }).then(() => {
+    fetch(
+      'https://react-meetups-c7d0d-default-rtdb.firebaseio.com//meetups.json',
+      {
+        method: 'POST',
+        body: JSON.stringify(meetupData),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    ).then(() => {
       history.replace('/')
+      // history.push('/') as another option to add a url to the stack
     })
   }
 
