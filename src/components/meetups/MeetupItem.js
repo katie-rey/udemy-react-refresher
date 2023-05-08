@@ -1,6 +1,7 @@
 import { useContext } from 'react'
-import classes from './MeetupItem.module.css'
+
 import Card from '../ui/Card'
+import classes from './MeetupItem.module.css'
 import FavouritesContext from '../../store/favourites-context'
 
 function MeetupItem(props) {
@@ -13,7 +14,6 @@ function MeetupItem(props) {
       favouritesCtx.removeFavourite(props.id)
     } else {
       favouritesCtx.addFavourite({
-        // creating an object to be passed to the addFavouriteshandler
         id: props.id,
         title: props.title,
         description: props.description,
@@ -22,15 +22,11 @@ function MeetupItem(props) {
       })
     }
   }
-
   return (
     <li className={classes.item}>
       <Card>
         <div className={classes.image}>
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg"
-            alt={props.title}
-          />
+          <img src={props.image} alt={props.title} />
         </div>
         <div className={classes.content}>
           <h3>{props.title}</h3>
