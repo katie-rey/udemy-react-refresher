@@ -13,7 +13,7 @@ const FavouriteContext = createContext({
 // js object store in a variable
 // takes an initial variable e.g. an obect
 
-function FavouriteContextProvider(props) {
+export function FavouriteContextProvider(props) {
   // responsible for sharing and updating favourites globally
   // returning the FavouriteContect varible we have created above
 
@@ -53,3 +53,5 @@ function FavouriteContextProvider(props) {
     </FavouriteContext.Provider>
   )
 }
+
+export default FavouriteContext
