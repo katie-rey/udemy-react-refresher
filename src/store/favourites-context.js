@@ -1,7 +1,7 @@
 import { createContext, useState } from 'react'
 // function exposed by the react libabry
 
-const FavouriteContext = createContext({
+const FavouritesContext = createContext({
   // set initial values
   favourites: [],
   totalFavourites: 0,
@@ -13,7 +13,7 @@ const FavouriteContext = createContext({
 // js object store in a variable
 // takes an initial variable e.g. an obect
 
-export function FavouriteContextProvider(props) {
+export function FavouritesContextProvider(props) {
   // responsible for sharing and updating favourites globally
   // returning the FavouriteContect varible we have created above
 
@@ -34,7 +34,7 @@ export function FavouriteContextProvider(props) {
       return prevUserFavourite.filter((meetup) => meetup.id !== meetupId)
     })
   }
-  function isFavouriteHandler(meetupId) {
+  function itemIsFavouriteHandler(meetupId) {
     return userFavourites.some((meetup) => meetup.id !== meetupId)
   }
 
@@ -44,14 +44,10 @@ export function FavouriteContextProvider(props) {
     totalFavourites: userFavourites.length,
     addFavourite: addFavouriteHandler,
     removeFavourite: removeFavouriteHandler,
-    isFavourite: isFavouriteHandler,
+    itemIsFavourite: itemIsFavouriteHandler,
   }
 
-  return (
-    <FavouriteContext.Provider value={context}>
-      {props.children}
-    </FavouriteContext.Provider>
-  )
+  return <FavouritesContext.Provider value={context}>{props.children}</FavouritesContext.Provider>
 }
 
-export default FavouriteContext
+export default FavouritesContext
